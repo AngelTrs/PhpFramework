@@ -13,7 +13,7 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 error_reporting(E_ALL);
 
-$environment = 'production';
+$environment = 'development';
 
 $whoops = new \Whoops\Run;
 $logger = new Logger('errors');
@@ -59,7 +59,7 @@ switch ($routeInfo[0]) {
         $className = $routeInfo[1][0];
         $method = $routeInfo[1][1];
         $vars = $routeInfo[2];
-        $class = $injector->make();
+        $class = $injector->make($className);
         $class->$method($vars);
         break;
 }
