@@ -1,3 +1,4 @@
 .idea/
 vendor/
-logs/exception.log
+logs/*
+config/production/*
